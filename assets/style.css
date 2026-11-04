@@ -40,7 +40,12 @@ body {
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
-.brand { font-weight: 800; color: var(--text); text-decoration: none; font-size: 1.05rem; }
+.brand { display: flex; align-items: center; min-width: 0; }
+.brand img { display: block; height: 32px; width: auto; max-width: 100%; }
+/* 로고 글자가 검정이라 헤더는 다크 모드에서도 흰 배경 유지 */
+.site-header { background: #fff; }
+.site-header .gnb a { color: #5d6677; }
+.site-header .gnb a[aria-current="page"] { color: #2f6fde; }
 .gnb a { color: var(--muted); text-decoration: none; font-weight: 500; }
 .gnb a[aria-current="page"] { color: var(--primary); }
 
@@ -126,7 +131,8 @@ main { padding-top: 0; padding-bottom: 64px; }
 .site-footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 600px) {
-  .brand { font-size: .95rem; }
+  .brand img { height: auto; }
+  .header-inner { height: 56px; }
   .hero { padding: 40px 0 52px; }
   .toolbar { flex-direction: column; }
   .year { font-size: 1.6rem; }
