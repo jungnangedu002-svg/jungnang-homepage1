@@ -21,7 +21,8 @@ window.HISTORY = [
       },
       {
         "date": "03.01",
-        "text": "박종두 센터장 취임"
+        "text": "박종두 센터장 취임",
+        "image": "images/history/2026-0301.jpg"
       },
       {
         "date": "03.20",
