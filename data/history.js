@@ -105,7 +105,8 @@ window.HISTORY = [
       },
       {
         "date": "04.07",
-        "text": "양인숙 센터장 취임"
+        "text": "양인숙 센터장 취임",
+        "image": "images/history/2025-0407.jpg"
       },
       {
         "date": "05.20",
