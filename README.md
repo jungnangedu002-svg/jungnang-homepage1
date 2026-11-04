@@ -31,7 +31,12 @@
 ## 링크 공유 미리보기 (카카오톡 등)
 - 미리보기 이미지: `assets/og-image.jpg` (1200×630)
 - 제목·설명: `index.html`의 `og:title`, `og:description`
-- 배포 시 `scripts/set-site-url.js`가 미리보기 주소를 Vercel 대표 도메인으로 자동 설정합니다.
-  다른 도메인(예: 기관 도메인)을 쓰면 Vercel 프로젝트 Settings → Environment Variables에 `SITE_URL`을 추가하세요.
+- 미리보기 주소는 `index.html`에 `https://jungnang-homepage1.vercel.app`으로 적혀 있습니다.
+  기관 도메인 등 다른 주소로 바꾸면 `og:url`, `og:image`, `twitter:image` 세 줄의 주소도 함께 바꿔주세요.
 - 카카오톡은 미리보기를 캐시하므로, 바뀐 내용이 안 보이면 https://developers.kakao.com/tool/debugger/sharing 에서 주소를 넣고 **캐시 초기화**를 누르세요.
-배포
+
+## 수정한 내용이 사이트에 안 보일 때
+Vercel 프로젝트 → **Deployments**에서 맨 위 배포 상태를 확인하세요.
+- **Error**: 배포를 눌러 오류 내용을 확인합니다.
+- **Ready**인데 예전 화면이면: 브라우저에서 새로고침(PC는 Ctrl+Shift+R).
+- `Redeploy`는 그 배포 당시 버전을 다시 올리는 기능이라, 최신 수정은 반영되지 않습니다.
