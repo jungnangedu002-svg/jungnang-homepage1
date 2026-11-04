@@ -27,3 +27,10 @@
 3. Framework Preset: **Other**, Build Command·Output Directory는 비워둔 채 **Deploy**
 
 이후 GitHub에 push할 때마다 자동으로 재배포됩니다.
+
+## 링크 공유 미리보기 (카카오톡 등)
+- 미리보기 이미지: `assets/og-image.jpg` (1200×630)
+- 제목·설명: `index.html`의 `og:title`, `og:description`
+- 배포 시 `scripts/set-site-url.js`가 미리보기 주소를 Vercel 대표 도메인으로 자동 설정합니다.
+  다른 도메인(예: 기관 도메인)을 쓰면 Vercel 프로젝트 Settings → Environment Variables에 `SITE_URL`을 추가하세요.
+- 카카오톡은 미리보기를 캐시하므로, 바뀐 내용이 안 보이면 https://developers.kakao.com/tool/debugger/sharing 에서 주소를 넣고 **캐시 초기화**를 누르세요.
