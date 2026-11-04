@@ -20,6 +20,10 @@ window.HISTORY = [
         "image": "images/history/2026-0213.jpg"
       },
       {
+        "date": "03.01",
+        "text": "박종두 센터장 취임"
+      },
+      {
         "date": "03.20",
         "text": "발달장애인 자조모임 「한땀한땀 친구들」 진행",
         "image": "images/history/2026-0320.jpg"
@@ -98,6 +102,10 @@ window.HISTORY = [
         "date": "04.04",
         "text": "중랑구발달장애인평생교육센터 「단과반」 개소",
         "image": "images/history/2025-0404.jpg"
+      },
+      {
+        "date": "04.07",
+        "text": "양인숙 센터장 취임"
       },
       {
         "date": "05.20",

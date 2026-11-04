@@ -10,6 +10,7 @@
   // 내용의 키워드로 분류를 자동 지정합니다.
   var CATEGORIES = [
     { key: "all", label: "모든 분류" },
+    { key: "org", label: "센터 운영", test: /취임|개소/ },
     { key: "mou", label: "업무협약", test: /업무협약/ },
     { key: "award", label: "선정·수상", test: /선정|입상|수상/ },
     { key: "pr", label: "발간·보도", test: /발간|보도|전시|평가/ },
