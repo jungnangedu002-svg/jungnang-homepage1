@@ -1,5 +1,11 @@
 (function () {
-  var data = (window.HISTORY || []).slice().sort(function (a, b) { return b.year - a.year; });
+  // 연도·날짜 모두 최신순(내림차순)으로 정렬
+  var data = (window.HISTORY || []).map(function (y) {
+    return {
+      year: y.year,
+      items: y.items.slice().sort(function (a, b) { return b.date.localeCompare(a.date); })
+    };
+  }).sort(function (a, b) { return b.year - a.year; });
 
   // 내용의 키워드로 분류를 자동 지정합니다.
   var CATEGORIES = [
