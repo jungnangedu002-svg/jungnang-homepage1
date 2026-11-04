@@ -72,7 +72,10 @@
         var parts = it.date.split(".");
         html += '<li class="event"><time datetime="' + y.year + "-" + parts[0] + "-" + parts[1] + '">' +
           '<span class="m">' + parseInt(parts[0], 10) + '월</span><span class="d">' + parts[1] + '</span></time>' +
-          '<div class="body"><span class="tag tag-' + c.key + '">' + c.label + '</span><p>' + format(it.text) + "</p></div></li>";
+          '<div class="body' + (it.image ? " has-photo" : "") + '">' +
+          (it.image ? '<button type="button" class="photo" data-src="' + escapeHtml(it.image) + '" data-caption="' + y.year + "." + escapeHtml(it.date + " " + it.text) + '" aria-label="사진 크게 보기">' +
+            '<img src="' + escapeHtml(it.image) + '" alt="' + escapeHtml(it.text) + '" loading="lazy" decoding="async" /></button>' : "") +
+          '<div class="text"><span class="tag tag-' + c.key + '">' + c.label + '</span><p>' + format(it.text) + "</p></div></div></li>";
       });
       html += "</ol></section>";
     });
@@ -80,6 +83,20 @@
   }
 
   function render() { renderControls(); renderTimeline(); }
+
+  // 사진 크게 보기
+  var box = document.getElementById("lightbox");
+  timeline.addEventListener("click", function (e) {
+    var btn = e.target.closest(".photo");
+    if (!btn) return;
+    box.querySelector("img").src = btn.dataset.src;
+    box.querySelector("img").alt = btn.dataset.caption;
+    box.querySelector("figcaption").textContent = btn.dataset.caption;
+    box.showModal();
+  });
+  box.addEventListener("click", function (e) {
+    if (e.target === box || e.target.closest(".lb-close")) box.close();
+  });
 
   document.getElementById("yr").textContent = new Date().getFullYear();
   render();
