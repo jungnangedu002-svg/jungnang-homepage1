@@ -35,11 +35,6 @@ window.HISTORY = [
         "image": "images/history/2026-0608.jpg"
       },
       {
-        "date": "07.03",
-        "text": "서울시 발달장애인평생교육센터 현장평가",
-        "image": "images/history/2026-0703.jpg"
-      },
-      {
         "date": "07.04",
         "text": "중랑상봉도서관 「나를 그리다, 나를 담다」 작품 전시",
         "image": "images/history/2026-0704.jpg"
