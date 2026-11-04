@@ -88,7 +88,19 @@
     timeline.innerHTML = total ? html : '<p class="empty">해당하는 연혁이 없습니다.</p>';
   }
 
-  function render() { renderControls(); renderTimeline(); }
+  // 비율이 4:3과 크게 다른 사진(세로 사진, 와이드 캡처 등)은 잘리지 않게 전체를 보여줌
+  function fitPhotos() {
+    timeline.querySelectorAll(".photo img").forEach(function (img) {
+      function check() {
+        if (!img.naturalWidth) return;
+        var r = img.naturalWidth / img.naturalHeight;
+        if (Math.abs(r - 4 / 3) > 0.15) img.parentNode.classList.add("is-contain");
+      }
+      if (img.complete) check(); else img.addEventListener("load", check);
+    });
+  }
+
+  function render() { renderControls(); renderTimeline(); fitPhotos(); }
 
   // 사진 크게 보기
   var box = document.getElementById("lightbox");
